@@ -1,4 +1,5 @@
 import React from 'react'
+import styled from 'styled-components'
 
 export default function restraunts(props){
     const {photo, name, price, type, time} = props

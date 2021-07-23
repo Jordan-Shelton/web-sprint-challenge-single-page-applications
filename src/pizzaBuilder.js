@@ -3,7 +3,7 @@ import React from 'react'
 import choice from './Choice'
 
 const pizzaBuilder = (props) => {
-    const {values, submit, change, errors, disable} = props
+    const {values, submit, change, errors, disabled} = props
     const onSubmit = event => {
         event.preventDefault()
         submit()
@@ -23,12 +23,12 @@ const pizzaBuilder = (props) => {
                 <label>
                     <h2>Your name</h2>
                     <p>{errors.name}</p>
-                    <input name = 'name' type = 'text' value = {value.name} onChange = {onChange}/>
+                    <input name = 'name' type = 'text' value = {values.name} onChange = {onChange}/>
                 </label>
                 <label>
                     <h3>How hungry are you?</h3>
                     <p>{errors.size}</p>
-                    <select onChange = {onChange} value = {value.size} name = 'size'>
+                    <select onChange = {onChange} value = {values.size} name = 'size'>
                         <option value = ''>--Select Size--</option>
                         <option value = 'small'>Small</option>
                         <option value = 'medium'>Medium</option>
@@ -67,7 +67,7 @@ const pizzaBuilder = (props) => {
                     <h4></h4>
                     <input style = {{width:'90%'}} name = 'comments' type = 'text' onChange = {onChange} value = {values.comments}/>
                 </label>
-                <button id = 'submit' disabled = {dissabled}>Checkout</button>
+                <button id = 'submit' disabled = {disabled}>Checkout</button>
             </form>
         </div>
     )
